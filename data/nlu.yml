@@ -17,8 +17,13 @@ nlu:
     - goodbye
     - see you around
     - see you later
+    - see you soon
     - see ya
     - buh bye
+    - so long
+    - chao
+    - take care
+    - bye now
 - intent: thank
   examples: |
     - thanks!
@@ -72,6 +77,11 @@ nlu:
     - I need some help
     - help me
     - can you please help me
+    - could you help, please
+    - i am looking for assistance
+    - could you provide some assistance please
+    - i may use some help here
+    - may i ask for help
 - intent: problem_email
   examples: |
     - my outlook application won't open
@@ -84,6 +94,15 @@ nlu:
     - can't log in to outlook
     - my email won't let me log in
     - i have a problem with my email
+    - may i get help with my email please
+    - please i need help with email
+    - i am having email troubles
+    - there appear to be an email issue
+    - some email issues
+    - i have email troubles
+    - can you help me with email
+    - email problems
+    - outlook does not work
 - intent: inform
   examples: |
     - my email is test@example.com

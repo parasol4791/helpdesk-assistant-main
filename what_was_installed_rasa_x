@@ -1,0 +1,236 @@
+Site: https://rasa.com/docs/rasa-x/installation-and-setup/install/local-mode
+
+# Window #1. Run actions server:
+  rasa run actions
+# Window #2. Run duckling server:
+  sudo docker run -p 8000:8000 rasa/duckling
+# Window #3.
+Run rasa x:  rasa x --debug
+
+# Web API will open on localhost:5002. Model can be trained from API
+
+
+# Install Rasa-X (local-mode):
+(base) dvk11@dvk11-Alienware-Aurora-R11:~$ pip3 install rasa-x --extra-index-url https://pypi.rasa.com/simple
+Looking in indexes: https://pypi.org/simple, https://pypi.rasa.com/simple
+Collecting rasa-x
+  Downloading https://pypi.rasa.com/api/package/rasa-x/rasa_x-0.36.0-py3-none-any.whl (2.0 MB)
+     |████████████████████████████████| 2.0 MB 2.0 MB/s
+Requirement already satisfied: questionary<1.6.0,>=1.5.1 in ./anaconda3/lib/python3.8/site-packages (from rasa-x) (1.5.2)
+Requirement already satisfied: pika<2.0.0,>=1.1.0 in ./anaconda3/lib/python3.8/site-packages (from rasa-x) (1.1.0)
+Collecting sanic-jwt<2.0.0,>=1.6.0
+  Downloading sanic-jwt-1.6.0.tar.gz (19 kB)
+Requirement already satisfied: sanic-cors<0.11.0,>=0.10.0b1 in ./anaconda3/lib/python3.8/site-packages (from rasa-x) (0.10.0.post3)
+Requirement already satisfied: psycopg2-binary<3.0.0,>=2.8.2 in ./anaconda3/lib/python3.8/site-packages (from rasa-x) (2.8.6)
+Requirement already satisfied: requests<3.0,>=2.23 in ./anaconda3/lib/python3.8/site-packages (from rasa-x) (2.24.0)
+Requirement already satisfied: setuptools>=41.0.0 in ./anaconda3/lib/python3.8/site-packages (from rasa-x) (50.3.1.post20201107)
+Requirement already satisfied: python-dateutil<2.9,>=2.8 in ./anaconda3/lib/python3.8/site-packages (from rasa-x) (2.8.1)
+Collecting ujson<2.0,>=1.35
+  Downloading ujson-1.35.tar.gz (192 kB)
+     |████████████████████████████████| 192 kB 3.8 MB/s
+Requirement already satisfied: ruamel.yaml<0.17,>=0.16 in ./anaconda3/lib/python3.8/site-packages (from rasa-x) (0.16.12)
+Collecting croniter<2.0.0,>=1.0.1
+  Downloading croniter-1.0.6-py2.py3-none-any.whl (13 kB)
+Requirement already satisfied: sanic<21.0.0,>=19.12.2 in ./anaconda3/lib/python3.8/site-packages (from rasa-x) (20.12.2)
+Requirement already satisfied: rasa<3.0.0,>=2.0.2 in ./anaconda3/lib/python3.8/site-packages (from rasa-x) (2.0.8)
+Requirement already satisfied: apscheduler<4.0,>=3.6 in ./anaconda3/lib/python3.8/site-packages (from rasa-x) (3.6.3)
+Collecting isodate<0.7,>=0.6
+  Downloading isodate-0.6.0-py2.py3-none-any.whl (45 kB)
+     |████████████████████████████████| 45 kB 2.5 MB/s
+Requirement already satisfied: SQLAlchemy<2.0.0,>=1.3.19 in ./anaconda3/lib/python3.8/site-packages (from rasa-x) (1.3.20)
+Requirement already satisfied: cryptography<4.0.0,>=3.0.0 in ./anaconda3/lib/python3.8/site-packages (from rasa-x) (3.1.1)
+Collecting alembic<1.5,>=1.4
+  Downloading alembic-1.4.3-py2.py3-none-any.whl (159 kB)
+     |████████████████████████████████| 159 kB 7.1 MB/s
+Collecting kafka-python<2.0,>=1.4
+  Downloading kafka_python-1.4.7-py2.py3-none-any.whl (266 kB)
+     |████████████████████████████████| 266 kB 10.0 MB/s
+Requirement already satisfied: aiohttp<4.0,>=3.6 in ./anaconda3/lib/python3.8/site-packages (from rasa-x) (3.6.3)
+Requirement already satisfied: jsonschema<4.0,>=3.2 in ./anaconda3/lib/python3.8/site-packages (from rasa-x) (3.2.0)
+Collecting attrs<20.0,>=19.3
+  Downloading attrs-19.3.0-py2.py3-none-any.whl (39 kB)
+Collecting GitPython<4.0.0,>=3.1.3
+  Downloading GitPython-3.1.13-py3-none-any.whl (159 kB)
+     |████████████████████████████████| 159 kB 9.0 MB/s
+Requirement already satisfied: prompt-toolkit<4.0,>=2.0 in ./anaconda3/lib/python3.8/site-packages (from questionary<1.6.0,>=1.5.1->rasa-x) (2.0.10)
+Collecting pyjwt==2.0.0
+  Downloading PyJWT-2.0.0-py3-none-any.whl (15 kB)
+Requirement already satisfied: sanic-plugins-framework>=0.9.0 in ./anaconda3/lib/python3.8/site-packages (from sanic-cors<0.11.0,>=0.10.0b1->rasa-x) (0.9.5)
+Requirement already satisfied: idna<3,>=2.5 in ./anaconda3/lib/python3.8/site-packages (from requests<3.0,>=2.23->rasa-x) (2.10)
+Requirement already satisfied: urllib3!=1.25.0,!=1.25.1,<1.26,>=1.21.1 in ./anaconda3/lib/python3.8/site-packages (from requests<3.0,>=2.23->rasa-x) (1.25.11)
+Requirement already satisfied: certifi>=2017.4.17 in ./anaconda3/lib/python3.8/site-packages (from requests<3.0,>=2.23->rasa-x) (2020.6.20)
+Requirement already satisfied: chardet<4,>=3.0.2 in ./anaconda3/lib/python3.8/site-packages (from requests<3.0,>=2.23->rasa-x) (3.0.4)
+Requirement already satisfied: six>=1.5 in ./anaconda3/lib/python3.8/site-packages (from python-dateutil<2.9,>=2.8->rasa-x) (1.15.0)
+Requirement already satisfied: ruamel.yaml.clib>=0.1.2; platform_python_implementation == "CPython" and python_version < "3.9" in ./anaconda3/lib/python3.8/site-packages (from ruamel.yaml<0.17,>=0.16->rasa-x) (0.2.2)
+Collecting natsort
+  Downloading natsort-7.1.1-py3-none-any.whl (35 kB)
+Requirement already satisfied: future in ./anaconda3/lib/python3.8/site-packages (from croniter<2.0.0,>=1.0.1->rasa-x) (0.18.2)
+Requirement already satisfied: websockets<9.0,>=8.1 in ./anaconda3/lib/python3.8/site-packages (from sanic<21.0.0,>=19.12.2->rasa-x) (8.1)
+Requirement already satisfied: aiofiles>=0.6.0 in ./anaconda3/lib/python3.8/site-packages (from sanic<21.0.0,>=19.12.2->rasa-x) (0.6.0)
+Collecting multidict<6.0,>=5.0
+  Downloading multidict-5.1.0-cp38-cp38-manylinux2014_x86_64.whl (159 kB)
+     |████████████████████████████████| 159 kB 7.9 MB/s
+Requirement already satisfied: httpx==0.15.4 in ./anaconda3/lib/python3.8/site-packages (from sanic<21.0.0,>=19.12.2->rasa-x) (0.15.4)
+Requirement already satisfied: httptools>=0.0.10 in ./anaconda3/lib/python3.8/site-packages (from sanic<21.0.0,>=19.12.2->rasa-x) (0.1.1)
+Requirement already satisfied: uvloop<0.15.0,>=0.5.3; sys_platform != "win32" and implementation_name == "cpython" in ./anaconda3/lib/python3.8/site-packages (from sanic<21.0.0,>=19.12.2->rasa-x) (0.14.0)
+Requirement already satisfied: oauth2client==4.1.3 in ./anaconda3/lib/python3.8/site-packages (from rasa<3.0.0,>=2.0.2->rasa-x) (4.1.3)
+Requirement already satisfied: python-engineio<3.14,>=3.11 in ./anaconda3/lib/python3.8/site-packages (from rasa<3.0.0,>=2.0.2->rasa-x) (3.13.2)
+Requirement already satisfied: tensorflow-text<2.4,>=2.3; sys_platform != "win32" in ./anaconda3/lib/python3.8/site-packages (from rasa<3.0.0,>=2.0.2->rasa-x) (2.3.0)
+Requirement already satisfied: tensorflow-estimator<2.4,>=2.3 in ./anaconda3/lib/python3.8/site-packages (from rasa<3.0.0,>=2.0.2->rasa-x) (2.3.0)
+Requirement already satisfied: colorclass<2.3,>=2.2 in ./anaconda3/lib/python3.8/site-packages (from rasa<3.0.0,>=2.0.2->rasa-x) (2.2.0)
+Requirement already satisfied: regex<2020.10,>=2020.6 in ./anaconda3/lib/python3.8/site-packages (from rasa<3.0.0,>=2.0.2->rasa-x) (2020.9.27)
+Requirement already satisfied: redis<4.0,>=3.4 in ./anaconda3/lib/python3.8/site-packages (from rasa<3.0.0,>=2.0.2->rasa-x) (3.5.3)
+Requirement already satisfied: tensorflow-addons<=0.12,>=0.10 in ./anaconda3/lib/python3.8/site-packages (from rasa<3.0.0,>=2.0.2->rasa-x) (0.12.0)
+Requirement already satisfied: tensorflow<2.4,>=2.3 in ./anaconda3/lib/python3.8/site-packages (from rasa<3.0.0,>=2.0.2->rasa-x) (2.3.2)
+Requirement already satisfied: pymongo[srv,tls]<3.11,>=3.8 in ./anaconda3/lib/python3.8/site-packages (from rasa<3.0.0,>=2.0.2->rasa-x) (3.10.1)
+Requirement already satisfied: sentry-sdk<0.20.0,>=0.17.0 in ./anaconda3/lib/python3.8/site-packages (from rasa<3.0.0,>=2.0.2->rasa-x) (0.19.5)
+Requirement already satisfied: python-socketio<4.7,>=4.4 in ./anaconda3/lib/python3.8/site-packages (from rasa<3.0.0,>=2.0.2->rasa-x) (4.6.1)
+Requirement already satisfied: networkx<2.6,>=2.4 in ./anaconda3/lib/python3.8/site-packages (from rasa<3.0.0,>=2.0.2->rasa-x) (2.5)
+Requirement already satisfied: tqdm<4.51,>=4.31 in ./anaconda3/lib/python3.8/site-packages (from rasa<3.0.0,>=2.0.2->rasa-x) (4.50.2)
+Requirement already satisfied: packaging<21.0,>=20.0 in ./anaconda3/lib/python3.8/site-packages (from rasa<3.0.0,>=2.0.2->rasa-x) (20.4)
+Requirement already satisfied: matplotlib<3.4,>=3.1 in ./anaconda3/lib/python3.8/site-packages (from rasa<3.0.0,>=2.0.2->rasa-x) (3.3.2)
+Requirement already satisfied: scikit-learn<0.24,>=0.22 in ./anaconda3/lib/python3.8/site-packages (from rasa<3.0.0,>=2.0.2->rasa-x) (0.23.2)
+Requirement already satisfied: slackclient<3.0.0,>=2.0.0 in ./anaconda3/lib/python3.8/site-packages (from rasa<3.0.0,>=2.0.2->rasa-x) (2.9.3)
+Requirement already satisfied: numpy<2.0,>=1.16 in ./anaconda3/lib/python3.8/site-packages (from rasa<3.0.0,>=2.0.2->rasa-x) (1.16.6)
+Requirement already satisfied: pydot<1.5,>=1.4 in ./anaconda3/lib/python3.8/site-packages (from rasa<3.0.0,>=2.0.2->rasa-x) (1.4.2)
+Requirement already satisfied: webexteamssdk<1.7.0,>=1.1.1 in ./anaconda3/lib/python3.8/site-packages (from rasa<3.0.0,>=2.0.2->rasa-x) (1.6)
+Requirement already satisfied: colorhash<1.1.0,>=1.0.2 in ./anaconda3/lib/python3.8/site-packages (from rasa<3.0.0,>=2.0.2->rasa-x) (1.0.3)
+Requirement already satisfied: scipy<2.0.0,>=1.4.1 in ./anaconda3/lib/python3.8/site-packages (from rasa<3.0.0,>=2.0.2->rasa-x) (1.4.1)
+Requirement already satisfied: terminaltables<3.2.0,>=3.1.0 in ./anaconda3/lib/python3.8/site-packages (from rasa<3.0.0,>=2.0.2->rasa-x) (3.1.0)
+Requirement already satisfied: mattermostwrapper<2.3,>=2.2 in ./anaconda3/lib/python3.8/site-packages (from rasa<3.0.0,>=2.0.2->rasa-x) (2.2)
+Requirement already satisfied: async_generator<1.11,>=1.10 in ./anaconda3/lib/python3.8/site-packages (from rasa<3.0.0,>=2.0.2->rasa-x) (1.10)
+Requirement already satisfied: absl-py<0.11,>=0.9 in ./anaconda3/lib/python3.8/site-packages (from rasa<3.0.0,>=2.0.2->rasa-x) (0.10.0)
+Requirement already satisfied: rasa-sdk<3.0.0,>=2.0.0 in ./anaconda3/lib/python3.8/site-packages (from rasa<3.0.0,>=2.0.2->rasa-x) (2.3.1)
+Requirement already satisfied: coloredlogs<15,>=10 in ./anaconda3/lib/python3.8/site-packages (from rasa<3.0.0,>=2.0.2->rasa-x) (14.3)
+Requirement already satisfied: python-telegram-bot<13.0,>=11.1 in ./anaconda3/lib/python3.8/site-packages (from rasa<3.0.0,>=2.0.2->rasa-x) (12.8)
+Requirement already satisfied: fbmessenger<6.1.0,>=6.0.0 in ./anaconda3/lib/python3.8/site-packages (from rasa<3.0.0,>=2.0.2->rasa-x) (6.0.0)
+Requirement already satisfied: joblib<0.16.0,>=0.15.1 in ./anaconda3/lib/python3.8/site-packages (from rasa<3.0.0,>=2.0.2->rasa-x) (0.15.1)
+Requirement already satisfied: jsonpickle<1.5,>=1.3 in ./anaconda3/lib/python3.8/site-packages (from rasa<3.0.0,>=2.0.2->rasa-x) (1.4.2)
+Requirement already satisfied: rocketchat_API<1.10.0,>=0.6.31 in ./anaconda3/lib/python3.8/site-packages (from rasa<3.0.0,>=2.0.2->rasa-x) (1.9.1)
+Requirement already satisfied: cloudpickle<1.5,>=1.2 in ./anaconda3/lib/python3.8/site-packages (from rasa<3.0.0,>=2.0.2->rasa-x) (1.4.1)
+Requirement already satisfied: tensorflow-probability<0.12,>=0.11 in ./anaconda3/lib/python3.8/site-packages (from rasa<3.0.0,>=2.0.2->rasa-x) (0.11.1)
+Requirement already satisfied: boto3<2.0,>=1.12 in ./anaconda3/lib/python3.8/site-packages (from rasa<3.0.0,>=2.0.2->rasa-x) (1.17.12)
+Requirement already satisfied: pykwalify<1.8.0,>=1.7.0 in ./anaconda3/lib/python3.8/site-packages (from rasa<3.0.0,>=2.0.2->rasa-x) (1.7.0)
+Requirement already satisfied: pytz<2021.0,>=2019.1 in ./anaconda3/lib/python3.8/site-packages (from rasa<3.0.0,>=2.0.2->rasa-x) (2020.1)
+Requirement already satisfied: sklearn-crfsuite<0.4,>=0.3 in ./anaconda3/lib/python3.8/site-packages (from rasa<3.0.0,>=2.0.2->rasa-x) (0.3.6)
+Requirement already satisfied: twilio<6.46,>=6.26 in ./anaconda3/lib/python3.8/site-packages (from rasa<3.0.0,>=2.0.2->rasa-x) (6.45.4)
+Collecting tensorflow_hub<0.10,>=0.9
+  Using cached tensorflow_hub-0.9.0-py2.py3-none-any.whl (103 kB)
+Requirement already satisfied: tzlocal>=1.2 in ./anaconda3/lib/python3.8/site-packages (from apscheduler<4.0,>=3.6->rasa-x) (2.1)
+Requirement already satisfied: cffi!=1.11.3,>=1.8 in ./anaconda3/lib/python3.8/site-packages (from cryptography<4.0.0,>=3.0.0->rasa-x) (1.14.3)
+Collecting Mako
+  Downloading Mako-1.1.4.tar.gz (479 kB)
+     |████████████████████████████████| 479 kB 8.7 MB/s
+Collecting python-editor>=0.3
+  Downloading python_editor-1.0.4-py3-none-any.whl (4.9 kB)
+Requirement already satisfied: async-timeout<4.0,>=3.0 in ./anaconda3/lib/python3.8/site-packages (from aiohttp<4.0,>=3.6->rasa-x) (3.0.1)
+Requirement already satisfied: yarl<1.6.0,>=1.0 in ./anaconda3/lib/python3.8/site-packages (from aiohttp<4.0,>=3.6->rasa-x) (1.5.1)
+Requirement already satisfied: pyrsistent>=0.14.0 in ./anaconda3/lib/python3.8/site-packages (from jsonschema<4.0,>=3.2->rasa-x) (0.17.3)
+Collecting gitdb<5,>=4.0.1
+  Downloading gitdb-4.0.5-py3-none-any.whl (63 kB)
+     |████████████████████████████████| 63 kB 2.7 MB/s
+Requirement already satisfied: wcwidth in ./anaconda3/lib/python3.8/site-packages (from prompt-toolkit<4.0,>=2.0->questionary<1.6.0,>=1.5.1->rasa-x) (0.2.5)
+Requirement already satisfied: httpcore==0.11.* in ./anaconda3/lib/python3.8/site-packages (from httpx==0.15.4->sanic<21.0.0,>=19.12.2->rasa-x) (0.11.1)
+Requirement already satisfied: rfc3986[idna2008]<2,>=1.3 in ./anaconda3/lib/python3.8/site-packages (from httpx==0.15.4->sanic<21.0.0,>=19.12.2->rasa-x) (1.4.0)
+Requirement already satisfied: sniffio in ./anaconda3/lib/python3.8/site-packages (from httpx==0.15.4->sanic<21.0.0,>=19.12.2->rasa-x) (1.2.0)
+Requirement already satisfied: httplib2>=0.9.1 in ./anaconda3/lib/python3.8/site-packages (from oauth2client==4.1.3->rasa<3.0.0,>=2.0.2->rasa-x) (0.19.0)
+Requirement already satisfied: rsa>=3.1.4 in ./anaconda3/lib/python3.8/site-packages (from oauth2client==4.1.3->rasa<3.0.0,>=2.0.2->rasa-x) (4.6)
+Requirement already satisfied: pyasn1>=0.1.7 in ./anaconda3/lib/python3.8/site-packages (from oauth2client==4.1.3->rasa<3.0.0,>=2.0.2->rasa-x) (0.4.8)
+Requirement already satisfied: pyasn1-modules>=0.0.5 in ./anaconda3/lib/python3.8/site-packages (from oauth2client==4.1.3->rasa<3.0.0,>=2.0.2->rasa-x) (0.2.8)
+Requirement already satisfied: typeguard>=2.7 in ./anaconda3/lib/python3.8/site-packages (from tensorflow-addons<=0.12,>=0.10->rasa<3.0.0,>=2.0.2->rasa-x) (2.11.1)
+Requirement already satisfied: opt-einsum>=2.3.2 in ./anaconda3/lib/python3.8/site-packages (from tensorflow<2.4,>=2.3->rasa<3.0.0,>=2.0.2->rasa-x) (3.3.0)
+Requirement already satisfied: keras-preprocessing<1.2,>=1.1.1 in ./anaconda3/lib/python3.8/site-packages (from tensorflow<2.4,>=2.3->rasa<3.0.0,>=2.0.2->rasa-x) (1.1.2)
+Requirement already satisfied: wheel>=0.26 in ./anaconda3/lib/python3.8/site-packages (from tensorflow<2.4,>=2.3->rasa<3.0.0,>=2.0.2->rasa-x) (0.35.1)
+Requirement already satisfied: h5py<2.11.0,>=2.10.0 in ./anaconda3/lib/python3.8/site-packages (from tensorflow<2.4,>=2.3->rasa<3.0.0,>=2.0.2->rasa-x) (2.10.0)
+Requirement already satisfied: astunparse==1.6.3 in ./anaconda3/lib/python3.8/site-packages (from tensorflow<2.4,>=2.3->rasa<3.0.0,>=2.0.2->rasa-x) (1.6.3)
+Requirement already satisfied: tensorboard<3,>=2.3.0 in ./anaconda3/lib/python3.8/site-packages (from tensorflow<2.4,>=2.3->rasa<3.0.0,>=2.0.2->rasa-x) (2.4.0)
+Requirement already satisfied: protobuf>=3.9.2 in ./anaconda3/lib/python3.8/site-packages (from tensorflow<2.4,>=2.3->rasa<3.0.0,>=2.0.2->rasa-x) (3.13.0)
+Requirement already satisfied: wrapt>=1.11.1 in ./anaconda3/lib/python3.8/site-packages (from tensorflow<2.4,>=2.3->rasa<3.0.0,>=2.0.2->rasa-x) (1.12.1)
+Requirement already satisfied: google-pasta>=0.1.8 in ./anaconda3/lib/python3.8/site-packages (from tensorflow<2.4,>=2.3->rasa<3.0.0,>=2.0.2->rasa-x) (0.2.0)
+Requirement already satisfied: grpcio>=1.8.6 in ./anaconda3/lib/python3.8/site-packages (from tensorflow<2.4,>=2.3->rasa<3.0.0,>=2.0.2->rasa-x) (1.32.0)
+Requirement already satisfied: gast==0.3.3 in ./anaconda3/lib/python3.8/site-packages (from tensorflow<2.4,>=2.3->rasa<3.0.0,>=2.0.2->rasa-x) (0.3.3)
+Requirement already satisfied: termcolor>=1.1.0 in ./anaconda3/lib/python3.8/site-packages (from tensorflow<2.4,>=2.3->rasa<3.0.0,>=2.0.2->rasa-x) (1.1.0)
+Requirement already satisfied: dnspython<2.0.0,>=1.16.0; extra == "srv" in ./anaconda3/lib/python3.8/site-packages (from pymongo[srv,tls]<3.11,>=3.8->rasa<3.0.0,>=2.0.2->rasa-x) (1.16.0)
+Requirement already satisfied: decorator>=4.3.0 in ./anaconda3/lib/python3.8/site-packages (from networkx<2.6,>=2.4->rasa<3.0.0,>=2.0.2->rasa-x) (4.4.2)
+Requirement already satisfied: pyparsing>=2.0.2 in ./anaconda3/lib/python3.8/site-packages (from packaging<21.0,>=20.0->rasa<3.0.0,>=2.0.2->rasa-x) (2.4.7)
+Requirement already satisfied: pillow>=6.2.0 in ./anaconda3/lib/python3.8/site-packages (from matplotlib<3.4,>=3.1->rasa<3.0.0,>=2.0.2->rasa-x) (8.0.1)
+Requirement already satisfied: kiwisolver>=1.0.1 in ./anaconda3/lib/python3.8/site-packages (from matplotlib<3.4,>=3.1->rasa<3.0.0,>=2.0.2->rasa-x) (1.3.0)
+Requirement already satisfied: cycler>=0.10 in ./anaconda3/lib/python3.8/site-packages (from matplotlib<3.4,>=3.1->rasa<3.0.0,>=2.0.2->rasa-x) (0.10.0)
+Requirement already satisfied: threadpoolctl>=2.0.0 in ./anaconda3/lib/python3.8/site-packages (from scikit-learn<0.24,>=0.22->rasa<3.0.0,>=2.0.2->rasa-x) (2.1.0)
+Requirement already satisfied: requests-toolbelt in ./anaconda3/lib/python3.8/site-packages (from webexteamssdk<1.7.0,>=1.1.1->rasa<3.0.0,>=2.0.2->rasa-x) (0.9.1)
+Requirement already satisfied: humanfriendly>=7.1 in ./anaconda3/lib/python3.8/site-packages (from coloredlogs<15,>=10->rasa<3.0.0,>=2.0.2->rasa-x) (9.1)
+Requirement already satisfied: tornado>=5.1 in ./anaconda3/lib/python3.8/site-packages (from python-telegram-bot<13.0,>=11.1->rasa<3.0.0,>=2.0.2->rasa-x) (6.0.4)
+Requirement already satisfied: dm-tree in ./anaconda3/lib/python3.8/site-packages (from tensorflow-probability<0.12,>=0.11->rasa<3.0.0,>=2.0.2->rasa-x) (0.1.5)
+Requirement already satisfied: s3transfer<0.4.0,>=0.3.0 in ./anaconda3/lib/python3.8/site-packages (from boto3<2.0,>=1.12->rasa<3.0.0,>=2.0.2->rasa-x) (0.3.4)
+Requirement already satisfied: jmespath<1.0.0,>=0.7.1 in ./anaconda3/lib/python3.8/site-packages (from boto3<2.0,>=1.12->rasa<3.0.0,>=2.0.2->rasa-x) (0.10.0)
+Requirement already satisfied: botocore<1.21.0,>=1.20.12 in ./anaconda3/lib/python3.8/site-packages (from boto3<2.0,>=1.12->rasa<3.0.0,>=2.0.2->rasa-x) (1.20.12)
+Requirement already satisfied: PyYAML>=3.11 in ./anaconda3/lib/python3.8/site-packages (from pykwalify<1.8.0,>=1.7.0->rasa<3.0.0,>=2.0.2->rasa-x) (5.3.1)
+Requirement already satisfied: docopt>=0.6.2 in ./anaconda3/lib/python3.8/site-packages (from pykwalify<1.8.0,>=1.7.0->rasa<3.0.0,>=2.0.2->rasa-x) (0.6.2)
+Requirement already satisfied: python-crfsuite>=0.8.3 in ./anaconda3/lib/python3.8/site-packages (from sklearn-crfsuite<0.4,>=0.3->rasa<3.0.0,>=2.0.2->rasa-x) (0.9.7)
+Requirement already satisfied: tabulate in ./anaconda3/lib/python3.8/site-packages (from sklearn-crfsuite<0.4,>=0.3->rasa<3.0.0,>=2.0.2->rasa-x) (0.8.8)
+Requirement already satisfied: pycparser in ./anaconda3/lib/python3.8/site-packages (from cffi!=1.11.3,>=1.8->cryptography<4.0.0,>=3.0.0->rasa-x) (2.20)
+Requirement already satisfied: MarkupSafe>=0.9.2 in ./anaconda3/lib/python3.8/site-packages (from Mako->alembic<1.5,>=1.4->rasa-x) (1.1.1)
+Collecting smmap<4,>=3.0.1
+  Downloading smmap-3.0.5-py2.py3-none-any.whl (25 kB)
+Requirement already satisfied: h11<0.10,>=0.8 in ./anaconda3/lib/python3.8/site-packages (from httpcore==0.11.*->httpx==0.15.4->sanic<21.0.0,>=19.12.2->rasa-x) (0.9.0)
+Requirement already satisfied: werkzeug>=0.11.15 in ./anaconda3/lib/python3.8/site-packages (from tensorboard<3,>=2.3.0->tensorflow<2.4,>=2.3->rasa<3.0.0,>=2.0.2->rasa-x) (1.0.1)
+Requirement already satisfied: tensorboard-plugin-wit>=1.6.0 in ./anaconda3/lib/python3.8/site-packages (from tensorboard<3,>=2.3.0->tensorflow<2.4,>=2.3->rasa<3.0.0,>=2.0.2->rasa-x) (1.6.0)
+Requirement already satisfied: markdown>=2.6.8 in ./anaconda3/lib/python3.8/site-packages (from tensorboard<3,>=2.3.0->tensorflow<2.4,>=2.3->rasa<3.0.0,>=2.0.2->rasa-x) (3.3.3)
+Requirement already satisfied: google-auth<2,>=1.6.3 in ./anaconda3/lib/python3.8/site-packages (from tensorboard<3,>=2.3.0->tensorflow<2.4,>=2.3->rasa<3.0.0,>=2.0.2->rasa-x) (1.24.0)
+Requirement already satisfied: google-auth-oauthlib<0.5,>=0.4.1 in ./anaconda3/lib/python3.8/site-packages (from tensorboard<3,>=2.3.0->tensorflow<2.4,>=2.3->rasa<3.0.0,>=2.0.2->rasa-x) (0.4.2)
+Requirement already satisfied: cachetools<5.0,>=2.0.0 in ./anaconda3/lib/python3.8/site-packages (from google-auth<2,>=1.6.3->tensorboard<3,>=2.3.0->tensorflow<2.4,>=2.3->rasa<3.0.0,>=2.0.2->rasa-x) (4.2.0)
+Requirement already satisfied: requests-oauthlib>=0.7.0 in ./anaconda3/lib/python3.8/site-packages (from google-auth-oauthlib<0.5,>=0.4.1->tensorboard<3,>=2.3.0->tensorflow<2.4,>=2.3->rasa<3.0.0,>=2.0.2->rasa-x) (1.3.0)
+Requirement already satisfied: oauthlib>=3.0.0 in ./anaconda3/lib/python3.8/site-packages (from requests-oauthlib>=0.7.0->google-auth-oauthlib<0.5,>=0.4.1->tensorboard<3,>=2.3.0->tensorflow<2.4,>=2.3->rasa<3.0.0,>=2.0.2->rasa-x) (3.1.0)
+Building wheels for collected packages: sanic-jwt, ujson, Mako
+  Building wheel for sanic-jwt (setup.py) ... done
+  Created wheel for sanic-jwt: filename=sanic_jwt-1.6.0-py3-none-any.whl size=21955 sha256=65934f222e7d23946e4e2861dc80036def6a40ef2b561cca8f2de3e2d328781d
+  Stored in directory: /home/dvk11/.cache/pip/wheels/62/f7/00/cc965b59765a286cdb511dffa456b289c95ee01fbcb43b861a
+  Building wheel for ujson (setup.py) ... done
+  Created wheel for ujson: filename=ujson-1.35-cp38-cp38-linux_x86_64.whl size=83268 sha256=dd6e0761068b1b02d153c2823ac7563d6bda42a2016c310437c7d56541ab324f
+  Stored in directory: /home/dvk11/.cache/pip/wheels/1b/92/b2/df9c56805bf5ebf331fb1ad733d0d4fd32ee3405fd8d88ed09
+  Building wheel for Mako (setup.py) ... done
+  Created wheel for Mako: filename=Mako-1.1.4-py2.py3-none-any.whl size=75674 sha256=1762c6c9913b12c1bf7628439e15925cd7d39a4536af19fe959511711649b850
+  Stored in directory: /home/dvk11/.cache/pip/wheels/17/bc/50/621fe4100d907a7296cc00c21371402b068b648820f6ff5812
+Successfully built sanic-jwt ujson Mako
+Installing collected packages: pyjwt, sanic-jwt, ujson, natsort, croniter, isodate, Mako, python-editor, alembic, kafka-python, attrs, smmap, gitdb, GitPython, rasa-x, multidict, tensorflow-hub
+  Attempting uninstall: pyjwt
+    Found existing installation: PyJWT 1.7.1
+    Uninstalling PyJWT-1.7.1:
+      Successfully uninstalled PyJWT-1.7.1
+  Attempting uninstall: sanic-jwt
+    Found existing installation: sanic-jwt 1.4.1
+    Uninstalling sanic-jwt-1.4.1:
+      Successfully uninstalled sanic-jwt-1.4.1
+  Attempting uninstall: ujson
+    Found existing installation: ujson 3.2.0
+    Uninstalling ujson-3.2.0:
+      Successfully uninstalled ujson-3.2.0
+  Attempting uninstall: kafka-python
+    Found existing installation: kafka-python 2.0.2
+    Uninstalling kafka-python-2.0.2:
+      Successfully uninstalled kafka-python-2.0.2
+  Attempting uninstall: attrs
+    Found existing installation: attrs 20.2.0
+    Uninstalling attrs-20.2.0:
+      Successfully uninstalled attrs-20.2.0
+  Attempting uninstall: multidict
+    Found existing installation: multidict 4.7.6
+    Uninstalling multidict-4.7.6:
+      Successfully uninstalled multidict-4.7.6
+  Attempting uninstall: tensorflow-hub
+    Found existing installation: tensorflow-hub 0.10.0
+    Uninstalling tensorflow-hub-0.10.0:
+      Successfully uninstalled tensorflow-hub-0.10.0
+ERROR: After October 2020 you may experience errors when installing or updating packages. This is because pip will change the way that it resolves dependency conflicts.
+
+We recommend you use --use-feature=2020-resolver to test your packages with the new resolver before it becomes the default.
+
+rasa 2.0.8 requires multidict<5.0,>=4.6, but you'll have multidict 5.1.0 which is incompatible.
+rasa 2.0.8 requires PyJWT<1.8,>=1.7, but you'll have pyjwt 2.0.0 which is incompatible.
+rasa 2.0.8 requires sanic-jwt<1.5.0,>=1.3.2, but you'll have sanic-jwt 1.6.0 which is incompatible.
+python-language-server 0.35.1 requires ujson>=3.0.0; python_version > "3", but you'll have ujson 1.35 which is incompatible.
+python-jsonrpc-server 0.4.0 requires ujson>=3.0.0, but you'll have ujson 1.35 which is incompatible.
+aiohttp 3.6.3 requires multidict<5.0,>=4.5, but you'll have multidict 5.1.0 which is incompatible.
+Successfully installed GitPython-3.1.13 Mako-1.1.4 alembic-1.4.3 attrs-19.3.0 croniter-1.0.6 gitdb-4.0.5 isodate-0.6.0 kafka-python-1.4.7 multidict-5.1.0 natsort-7.1.1 pyjwt-2.0.0 python-editor-1.0.4 rasa-x-0.36.0 sanic-jwt-1.6.0 smmap-3.0.5 tensorflow-hub-0.9.0 ujson-1.35
+
+
