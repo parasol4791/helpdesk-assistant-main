@@ -21,6 +21,7 @@ intents:
 - trigger_handoff
 - human_handoff
 - handoff
+- where_you_live
 
 entities:
 - email
@@ -118,6 +119,8 @@ responses:
   - text: If you were talking to me via chatroom, I would have handed you off to {handoffhost}.
   utter_no_handoff:
   - text: Since you haven't configured a host to hand off to, I can't send you anywhere!
+  utter_iliveonline:
+  - text: I live online, I believe.
 
 forms:
   open_incident_form:
@@ -181,3 +184,4 @@ actions:
 - action_open_incident
 - validate_open_incident_form
 - validate_incident_status_form
+- utter_iliveonline
